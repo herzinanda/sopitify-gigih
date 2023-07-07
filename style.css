@@ -1,0 +1,283 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: sans-serif;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+.page-wrap {
+    max-width: 2100px;
+    min-height: 100%;
+    background: #000;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    grid-template-rows: 5rem 1fr auto;
+    grid-template-areas:
+        "fixed header"
+        "fixed main"
+        "footer footer";
+    gap: 10px;
+}
+
+.header {
+    grid-area: header;
+    align-self: center;
+    margin-right: 10px;
+    margin-top: 10px;
+    height: 70px;
+}
+
+.left-sidebar {
+    grid-area: fixed;
+}
+
+.content {
+    grid-area: main;
+    margin-right: 10px;
+    color: #fff;
+}
+
+.footer {
+    grid-area: footer;
+    background-color: #141414;
+}
+
+.content,
+.header {
+    border-radius: 10px;
+}
+
+.content,
+.header,
+.footer {
+    background: #141414;
+    padding: 10px;
+
+}
+
+.left-sidebar {
+    padding: 0;
+}
+
+/* side nav */
+.side-nav {
+    position: fixed;
+    bottom: 70px;
+    top: 10px;
+    width: 320px;
+    z-index: 99;
+    overflow: auto;
+    /* border-right: 1px solid #999; */
+}
+
+.sticky-sidebar {
+    position: -webkit-sticky;
+    /* needed for ios*/
+    position: sticky;
+    top: 0;
+    color: #fff;
+    /* padding: 10px; */
+    /* font-size: 2rem; */
+    border-radius: 10px;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #141414;
+}
+
+.side-nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.side-nav a {
+    text-decoration: none;
+    color: #fff;
+    display: block;
+    padding: 1rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 14px;
+}
+
+.side-nav a:hover {
+    background: #000;
+    color: #fff;
+}
+
+.play-button {
+    background-color: rgb(8, 88, 8);
+    padding: 15px;
+    border-radius: 50%;
+    margin-left: auto;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.play-button i {
+    margin: auto;
+}
+
+/* end side-nav */
+
+/* content */
+.main {
+    position: fixed;
+    margin-top: 100px;
+    bottom: 70px;
+    top: 1px;
+    z-index: 99;
+    overflow: auto;
+}
+
+
+
+/* end content */
+
+
+/* headers start */
+.header {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.profile {
+    display: flex;
+}
+
+.profile h1 {
+    display: flex;
+    color: #fff;
+    align-items: center;
+    vertical-align: middle;
+}
+
+.img-profile {
+    margin-left: auto;
+    margin-right: 30px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.list-songs {
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+}
+
+/* headers ends */
+
+.most-played {
+    display: flex;
+    flex-direction: column;
+}
+
+.most-played h1 {
+    font-size: 20px;
+}
+
+.most-played-list {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.most-played-item {
+    display: flex;
+    flex-direction: row;
+}
+
+.most-played-item h2 {
+    margin: 10px 0 0 10px;
+}
+
+.most-played-item p {
+    margin: 0px 0 0 10px;
+}
+
+.most-played-item .play-button {
+    margin: 10px 0 0 30px;
+}
+
+.most-played-song-details {
+    display: flex;
+    flex-direction: column;
+}
+
+/* All songs */
+.all-songs-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.all-songs-item {
+    display: flex;
+    flex-direction: row;
+}
+
+.all-songs-item h2 {
+    margin: 10px 0 0 10px;
+}
+
+.all-songs-item p {
+    margin: 0px 0 0 10px;
+}
+
+.all-songs-item .play-button {
+    margin: 10px 0 0 100px;
+}
+
+.all-songs-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.add-to-playlist {
+    width: 50px;
+    height: 50px;
+    background-color: rgb(8, 88, 8);
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    margin: 10px 0 0 10px;
+}
+
+.add-to-playlist span {
+    font-size: 40px;
+    margin: auto;
+
+}
+
+@media screen and (max-width: 980px) {
+    .page-wrap {
+        grid-template-columns: auto;
+        grid-template-areas:
+            "header"
+            "main"
+            "footer";
+    }
+
+    .sidebar {
+        display: none;
+    }
+}
